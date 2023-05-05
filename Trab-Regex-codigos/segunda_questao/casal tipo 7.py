@@ -29,7 +29,7 @@ def regex_g(cadeia:str, x:int, y:int) -> bool:
 
 def arranjos(lista:list, qtd:int) -> list:
   """
-  Função responsavel por fazer os arranjos de H, M
+  Função responsável por fazer os arranjos de H, M
 
   Args: 
   lista (list): alfabeto que sera feito os arranjos,
@@ -58,31 +58,31 @@ def geraSentenca():
     if x > 0 and y > 0 and x <= y:
       
 
-        listaPais = ['M', 'H'] #alfabeto
-        arranjos_possiveis = [] #lista que contem tuplas, cada elemento é uma combinação possivel que vai de x até y
-        listaCadeias = [] #lista que armazena cadeias criadas pelo gerador
+        listaPais = ['M', 'H']  #Alfabeto
+        arranjos_possiveis = [] #Lista que contem tuplas, cada elemento é uma combinação possivel que vai de x até y
+        listaCadeias = []       #Lista que armazena cadeias criadas pelo gerador
         cadeiasValidas = []
         cadeiasInvalidas = []
 
         for j in range(5):
           
             for i in range(x, y+1):
-                arranjo = arranjos(listaPais, i) #variavel que recebe lista com elementos em tupla
+                arranjo = arranjos(listaPais, i) #Variável que recebe lista com elementos em tupla
 
-                for index in range (len(arranjo)): #estrutura de repetição para iterar cada elemento da lista arranjo
-                    arranjos_possiveis.append(arranjo[index]) #convertendo cada elemento tupla em lista e posteriormente adicionando na lista contendo as tuplas
+                for index in range (len(arranjo)): #Estrutura de repetição para iterar cada elemento da lista arranjo
+                    arranjos_possiveis.append(arranjo[index]) #Convertendo cada elemento tupla em lista e posteriormente adicionando na lista contendo as tuplas
 
-            for item in arranjos_possiveis: #acessar cada tupla da lista arranjos_possiveis
-                cadeia = '' #variavel para incrementar com elementos da lista arranjos_possiveis
+            for item in arranjos_possiveis: #Acessar cada tupla da lista arranjos_possiveis
+                cadeia = ''                 #Variavel para incrementar com elementos da lista arranjos_possiveis
 
-                for x in range(len(item)): #acessar cada elemento da tupla
+                for x in range(len(item)): #Acessar cada elemento da tupla
                     cadeia += item[x] #nesta etapa o casal é formado
 
-                tamanhoFilhos = randint(0, 15) #esta decidindo a quantidade de filhos entre 0 e 15
-                listaFilhos = ['h', 'm'] #alfabeto filhos
+                tamanhoFilhos = randint(0, 15) #Está decidindo a quantidade de filhos entre 0 e 15
+                listaFilhos = ['h', 'm']       #Alfabeto filhos
 
                 for i in range(tamanhoFilhos+1):
-                    cadeia += listaFilhos[randint(0,1)] #adiciona a cadeia os filhos para fazer a avaliação
+                    cadeia += listaFilhos[randint(0,1)] #Adiciona a cadeia os filhos para fazer a avaliação
                 
                 listaCadeias.append(cadeia)
 
